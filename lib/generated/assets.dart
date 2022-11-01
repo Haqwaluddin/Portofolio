@@ -17,5 +17,6 @@ class Assets {
   static const String imagesSplashscreen = 'assets/images/splashscreen.png';
   static const String imagesSurvey = 'assets/images/survey.png';
   static const String imagesSystemsdata = 'assets/images/systemsdata.png';
+  static const String imagesWhatsAppIcon = 'assets/images/WhatsApp_icon.png';
 
 }

@@ -6,7 +6,7 @@ import 'package:portofolio/presentation/home_controller.dart';
 class Home extends StatelessWidget {
    Home({Key? key}) : super(key: key);
 
-  var _getdata = Get.put(HomeController());
+  var _getData = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,13 @@ class Home extends StatelessWidget {
           },
         ),
       ),
-    );
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _getData.clickToChat();
+          },
+        backgroundColor: Colors.lightGreenAccent.withOpacity(0.2),
+        child: Image.asset("assets/images/WhatsApp_icon.png"),
+    ),);
   }
 
   Widget webScreen(){
@@ -194,7 +200,7 @@ class Home extends StatelessWidget {
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: _getdata.dataListSundayaApp.length,
+                      itemCount: _getData.dataListSundayaApp.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -204,7 +210,7 @@ class Home extends StatelessWidget {
                               height: 100,
                               width: 200,
                               color: Colors.red,
-                              child: Image.asset("${_getdata.dataListSundayaApp[index]["img"]}",fit: BoxFit.fill),
+                              child: Image.asset("${_getData.dataListSundayaApp[index]["img"]}",fit: BoxFit.fill),
                             ),
                           ),
                         );
@@ -233,7 +239,7 @@ class Home extends StatelessWidget {
                               primary: Colors.red
                           ),
                           onPressed: (){
-                            js.context.callMethod('open', ['${_getdata.urlSundayaApp}']);
+                            js.context.callMethod('open', ['${_getData.urlSundayaApp}']);
                           },
                           child: Text("More Details")),
                     ),
@@ -263,7 +269,7 @@ class Home extends StatelessWidget {
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: _getdata.dataListSundayaDesktop.length,
+                      itemCount: _getData.dataListSundayaDesktop.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -273,7 +279,7 @@ class Home extends StatelessWidget {
                               height: 100,
                               width: 450,
                               color: Colors.red,
-                              child: Image.asset("${_getdata.dataListSundayaDesktop[index]["img"]}",fit: BoxFit.fill),
+                              child: Image.asset("${_getData.dataListSundayaDesktop[index]["img"]}",fit: BoxFit.fill),
                             ),
                           ),
                         );
@@ -282,8 +288,8 @@ class Home extends StatelessWidget {
                   ),
                   const Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text("Sundaya App adalah Sebuah aplikasi untuk partner yang memasang solar panel dan juga untuk partner seperti sales,teknisi dan surveyor,"
-                        "didalamnya terdapat beberapa fitur seperti \n1. System Data : Untuk partner yang memasang solar panel, system data ini adalah sebuah sistem"
+                    child: Text("Sundaya Desktop App adalah Sebuah aplikasi untuk internal untuk menerima request role yang disediakan di aplikasi sundaya app dan untuk adminnya system data,"
+                        "didalamnya terdapat beberapa fitur seperti \n1. System Data : Untuk admin melihat kondisi solar panel yang terpasang, system data ini adalah sebuah sistem"
                         "monitoring untuk memonitoring solar panel,datanya ada harian, bulanan dan tahunan.Ada juga adanya info penghematan berapa uang yang kita keluarkan ketika kita hanya memakai pln saja"
                         "dengan kita memasang solar panel.\n"
                         "2. Contact: Sebuah fitur untuk sales, teknisi dan surveyor ketika ingin berkomunikasi dengan yang sudah terdaftar di aplikasi.\n"
@@ -302,7 +308,7 @@ class Home extends StatelessWidget {
                               primary: Colors.red
                           ),
                           onPressed: (){
-                            js.context.callMethod('open', ['${_getdata.urlSundayaDesktop}']);
+                            js.context.callMethod('open', ['${_getData.urlSundayaDesktop}']);
                           },
                           child: Text("More Details")),
                     ),
@@ -485,7 +491,7 @@ class Home extends StatelessWidget {
                      child: ListView.builder(
                        shrinkWrap: true,
                        scrollDirection: Axis.horizontal,
-                       itemCount: _getdata.dataListSundayaApp.length,
+                       itemCount: _getData.dataListSundayaApp.length,
                        itemBuilder: (BuildContext context, int index) {
                          return Padding(
                            padding: const EdgeInsets.all(8.0),
@@ -495,7 +501,7 @@ class Home extends StatelessWidget {
                                height: 100,
                                width: 200,
                                color: Colors.red,
-                               child: Image.asset("${_getdata.dataListSundayaApp[index]["img"]}",fit: BoxFit.fill),
+                               child: Image.asset("${_getData.dataListSundayaApp[index]["img"]}",fit: BoxFit.fill),
                              ),
                            ),
                          );
@@ -524,7 +530,7 @@ class Home extends StatelessWidget {
                                primary: Colors.red
                            ),
                            onPressed: (){
-                             js.context.callMethod('open', ['${_getdata.urlSundayaApp}']);
+                             js.context.callMethod('open', ['${_getData.urlSundayaApp}']);
                            },
                            child: Text("More Details")),
                      ),
@@ -554,7 +560,7 @@ class Home extends StatelessWidget {
                      child: ListView.builder(
                        shrinkWrap: true,
                        scrollDirection: Axis.horizontal,
-                       itemCount: _getdata.dataListSundayaDesktop.length,
+                       itemCount: _getData.dataListSundayaDesktop.length,
                        itemBuilder: (BuildContext context, int index) {
                          return Padding(
                            padding: const EdgeInsets.all(8.0),
@@ -564,7 +570,7 @@ class Home extends StatelessWidget {
                                height: 100,
                                width: 450,
                                color: Colors.red,
-                               child: Image.asset("${_getdata.dataListSundayaDesktop[index]["img"]}",fit: BoxFit.fill),
+                               child: Image.asset("${_getData.dataListSundayaDesktop[index]["img"]}",fit: BoxFit.fill),
                              ),
                            ),
                          );
@@ -573,8 +579,8 @@ class Home extends StatelessWidget {
                    ),
                    const Padding(
                      padding: EdgeInsets.all(10),
-                     child: Text("Sundaya App adalah Sebuah aplikasi untuk partner yang memasang solar panel dan juga untuk partner seperti sales,teknisi dan surveyor,"
-                         "didalamnya terdapat beberapa fitur seperti \n1. System Data : Untuk partner yang memasang solar panel, system data ini adalah sebuah sistem"
+                     child: Text("Sundaya Desktop App adalah Sebuah aplikasi untuk internal untuk menerima request role yang disediakan di aplikasi sundaya app dan untuk adminnya system data,"
+                         "didalamnya terdapat beberapa fitur seperti \n1. System Data : Untuk admin melihat kondisi solar panel yang terpasang, system data ini adalah sebuah sistem"
                          "monitoring untuk memonitoring solar panel,datanya ada harian, bulanan dan tahunan.Ada juga adanya info penghematan berapa uang yang kita keluarkan ketika kita hanya memakai pln saja"
                          "dengan kita memasang solar panel.\n"
                          "2. Contact: Sebuah fitur untuk sales, teknisi dan surveyor ketika ingin berkomunikasi dengan yang sudah terdaftar di aplikasi.\n"
@@ -593,7 +599,7 @@ class Home extends StatelessWidget {
                                primary: Colors.red
                            ),
                            onPressed: (){
-                             js.context.callMethod('open', ['${_getdata.urlSundayaDesktop}']);
+                             js.context.callMethod('open', ['${_getData.urlSundayaDesktop}']);
                            },
                            child: Text("More Details")),
                      ),

@@ -17,6 +17,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   url_launcher: ^6.1.6
+  whatsapp_unilink: ^2.0.2
+  whatsapp: ^2.0.0
 
 dev_dependencies:
   flutter_test:

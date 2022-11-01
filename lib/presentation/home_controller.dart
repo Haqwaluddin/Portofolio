@@ -1,4 +1,7 @@
+import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeController extends GetxController{
 
@@ -22,5 +25,13 @@ class HomeController extends GetxController{
   ];
   var urlSundayaApp = "https://www.figma.com/file/b8Hf3Vllh4PP0QVZsJerxc/Sundaya-App?node-id=201%3A4610";
   var urlSundayaDesktop = "https://www.figma.com/file/b8Hf3Vllh4PP0QVZsJerxc/Sundaya-App?node-id=2%3A10981";
+
+  static const url = "https://wa.me/+6281386681092";
+  // var encoded = Uri.encodeFull(url);
+  var phone = "+6281386681092";
+
+void clickToChat(){
+  launchUrl(Uri.parse(url));
+}
 
 }
